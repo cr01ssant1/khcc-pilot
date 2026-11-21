@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keymer &amp; Hassocks Cricket Club</title>
+  <meta name="description" content="Keymer &amp; Hassocks Cricket Club – friendly, community cricket for all ages and abilities. Fixtures, results, teams and membership.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%230b5d2a'/><circle cx='50' cy='50' r='30' fill='%23d4a017'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="Keymer &amp; Hassocks Cricket Club home">
+        <span class="crest" aria-hidden="true">KHCC</span>
+        <span class="brand-text">
+          <span class="brand-name">Keymer &amp; Hassocks</span>
+          <span class="brand-sub">Cricket Club · Est. 1896</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#fixtures">Fixtures</a>
+        <a href="#results">Results</a>
+        <a href="#teams">Teams</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#join" class="btn btn-gold btn-sm">Join the club</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">Season 2027 · Juniors train Friday evenings</p>
+        <h1>Cricket for everyone,<br><span class="gold">since 1896.</span></h1>
+        <p class="lead">A friendly village club at Adastra Park, Hassocks, with three Saturday league sides, a Sunday Development XI, a girls' team and junior cricket from All Stars (5–7) to Under 16. New players of every age and ability are always welcome.</p>
+        <div class="hero-actions">
+          <a href="#join" class="btn btn-gold">Become a member</a>
+          <a href="#fixtures" class="btn btn-outline">See fixtures</a>
+        </div>
+      </div>
+      <div class="hero-stats container">
+        <div class="stat"><span class="stat-num">4</span><span class="stat-label">Senior XIs</span></div>
+        <div class="stat"><span class="stat-num">8</span><span class="stat-label">Junior age groups</span></div>
+        <div class="stat"><span class="stat-num">130</span><span class="stat-label">Years of cricket</span></div>
+        <div class="stat"><span class="stat-num">2</span><span class="stat-label">Grounds</span></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container two-col">
+        <div>
+          <p class="eyebrow">About the club</p>
+          <h2>More than a game</h2>
+          <p>Keymer &amp; Hassocks Cricket Club has been at the heart of Hassocks and Keymer since 1896 – and 2026 marks our 130th anniversary. Our home is Adastra Park, with a pavilion and bar, changing rooms and a defibrillator on site, and we also play at Clayton Recreation Ground.</p>
+          <p>Whether you're picking up a bat for the first time, returning after a few years away, or looking for competitive league cricket, there's a place for you here.</p>
+          <ul class="ticks">
+            <li>Saturday cricket in the Sussex Cricket League</li>
+            <li>Juniors in the South Area Young Cricketers League &amp; Sussex Junior Cricket Festival</li>
+            <li>Welcoming, inclusive and family-friendly</li>
+          </ul>
+        </div>
+        <div class="about-card" aria-hidden="true">
+          <div class="pitch">
+            <div class="crease top"></div>
+            <div class="stumps top"><i></i><i></i><i></i></div>
+            <div class="stumps bottom"><i></i><i></i><i></i></div>
+            <div class="crease bottom"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FIXTURES -->
+    <section class="section section-tint" id="fixtures">
+      <div class="container">
+        <p class="eyebrow">What's coming up</p>
+        <h2>Upcoming fixtures</h2>
+        <div class="filter" role="group" aria-label="Filter fixtures by team">
+          <button class="chip active" data-team="all">All</button>
+          <button class="chip" data-team="1st XI">1st XI</button>
+          <button class="chip" data-team="2nd XI">2nd XI</button>
+          <button class="chip" data-team="3rd XI">3rd XI</button>
+          <button class="chip" data-team="Development XI">Development XI</button>
+          <button class="chip" data-team="Juniors">Juniors</button>
+        </div>
+        <div class="fixture-list" id="fixture-list"></div>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="section" id="results">
+      <div class="container">
+        <p class="eyebrow">How we got on</p>
+        <h2>Latest results</h2>
+        <div class="results-grid" id="results-list"></div>
+      </div>
+    </section>
+
+    <!-- TEAMS -->
+    <section class="section section-green" id="teams">
+      <div class="container">
+        <p class="eyebrow eyebrow-gold">Our teams</p>
+        <h2>Find your level</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>1st, 2nd &amp; 3rd XI</h3>
+            <p>Saturday league cricket in the Sussex Cricket League, plus a T20 side. Competitive, but always played in the right spirit.</p>
+            <p class="meta">Saturdays</p>
+          </article>
+          <article class="card">
+            <h3>Development XI</h3>
+            <p>Our Sunday side – perfect for newer players, returners, juniors stepping up and anyone who just loves the game.</p>
+            <p class="meta">Sundays · 1:00pm</p>
+          </article>
+          <article class="card">
+            <h3>Juniors</h3>
+            <p>ECB All Stars (5–7) and mixed age-group teams from Under 9 to Under 16, with midweek and weekend matches.</p>
+            <p class="meta">Training Fridays · from 5:30pm</p>
+          </article>
+          <article class="card">
+            <h3>Girls</h3>
+            <p>A dedicated girls' team training alongside the youngest juniors, with fixtures arranged through the season.</p>
+            <p class="meta">Fridays · 5:30–6:15pm</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWS -->
+    <section class="section" id="news">
+      <div class="container">
+        <p class="eyebrow">Club news</p>
+        <h2>From the pavilion</h2>
+        <div class="news-grid">
+          <article class="news-item">
+            <time datetime="2026">2026</time>
+            <h3>130 years of cricket</h3>
+            <p>2026 marked the club's 130th anniversary – thank you to every player, volunteer, parent and sponsor who made it a season to remember.</p>
+          </article>
+          <article class="news-item">
+            <time datetime="2026-09-05">5 Sep 2026</time>
+            <h3>1st XI win by 178 runs</h3>
+            <p>A dominant 297/5 from 40 overs set up a huge win over Felbridge &amp; Sunnyside to close out the Saturday season.</p>
+          </article>
+          <article class="news-item">
+            <time datetime="2026-09-12">12 Sep 2026</time>
+            <h3>Junior presentation evening</h3>
+            <p>Well done to all our juniors from U9 to U16 on a great season of league matches and festival weeks.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOIN -->
+    <section class="section section-gold" id="join">
+      <div class="container two-col">
+        <div>
+          <p class="eyebrow eyebrow-green">Membership</p>
+          <h2>Join KHCC</h2>
+          <p>Senior, junior, girls' and social members are all welcome. Fill in the form and a member of the committee will be in touch with current membership fees and how to get started.</p>
+          <p>Juniors can join from age 5 through ECB All Stars, then move into our age-group teams from Under 9 to Under 16.</p>
+        </div>
+        <form class="join-form" id="join-form" novalidate>
+          <label>Name
+            <input type="text" name="name" required autocomplete="name">
+          </label>
+          <label>Email
+            <input type="email" name="email" required autocomplete="email">
+          </label>
+          <label>I'm interested in
+            <select name="interest">
+              <option>Senior cricket</option>
+              <option>Junior cricket</option>
+              <option>All Stars (5–7)</option>
+              <option>Girls' cricket</option>
+              <option>Social membership</option>
+              <option>Volunteering</option>
+            </select>
+          </label>
+          <label>Message (optional)
+            <textarea name="message" rows="3"></textarea>
+          </label>
+          <button type="submit" class="btn btn-green">Send enquiry</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container two-col">
+        <div>
+          <p class="eyebrow">Find us</p>
+          <h2>Contact &amp; directions</h2>
+          <address>
+            <strong>Keymer &amp; Hassocks Cricket Club</strong><br>
+            The Club House, Sports Pavilion<br>
+            Adastra Park, Keymer Road<br>
+            Hassocks, Sussex<br>
+            BN6 8QH
+          </address>
+          <p>Access via Adastra Hall on Keymer Road.</p>
+          <p><strong>Second ground:</strong> Clayton Recreation Ground, Underhill Lane, Clayton, BN6 9PJ</p>
+          <p><a href="https://keymer.play-cricket.com/Aboutus">Contact the club</a> · <a href="https://x.com/KHCC3">@KHCC3 on X</a></p>
+        </div>
+        <iframe class="map-embed" title="Map of Adastra Park, Hassocks" loading="lazy"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-0.1416%2C50.9204%2C-0.1296%2C50.9264&amp;layer=mapnik&amp;marker=50.9234874%2C-0.1356249"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Keymer &amp; Hassocks Cricket Club</p>
+      <p class="sponsors">With thanks to our sponsors: The Hassocks · A Twine Butchers · Finesse Heating &amp; Plumbing · George Refurbishments · Hassocks Eyecare</p>
+      <p><a href="#top">Back to top ↑</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
