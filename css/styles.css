@@ -360,6 +360,17 @@ address { font-style: normal; margin-bottom: 1rem; line-height: 1.7; }
 .policy-grid .yn { margin: 0; }
 .yn-compact > legend { font-weight: 600; font-size: .9rem; }
 
+.policy-callout {
+  display: flex; align-items: center; gap: .8rem;
+  background: var(--gold-100); border: 1px solid #ecd9a0; border-left: 5px solid var(--gold-500);
+  border-radius: 10px; padding: .9rem 1.1rem; margin: 0 0 1rem;
+}
+.policy-icon { flex-shrink: 0; color: #8a6a10; }
+.policy-callout p { margin: 0; font-size: .93rem; }
+.policy-callout a { color: var(--green-700); font-weight: 600; text-underline-offset: 2px; }
+.policy-callout a:hover { color: var(--green-800); }
+.policy-callout .ext { color: var(--muted); font-size: .85rem; }
+
 /* Optional second parent / emergency contact */
 .add-more {
   margin-top: 1.2rem; font: inherit; font-weight: 600; font-size: .92rem; cursor: pointer;
