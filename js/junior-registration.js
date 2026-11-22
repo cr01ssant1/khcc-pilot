@@ -179,6 +179,43 @@
 
   document.getElementById("reg-print").addEventListener("click", () => window.print());
 
+  // ---- progress indicator ("Step 2 of 6 · Emergency contact") -------------
+  // Follows the scroll position. Counts only visible sections, so the total
+  // becomes 7 when the player's own consent section appears.
+  const progress = document.getElementById("reg-progress");
+  const progressStep = document.getElementById("reg-progress-step");
+  const progressName = document.getElementById("reg-progress-name");
+  const progressFill = document.getElementById("reg-progress-fill");
+
+  function updateProgress() {
+    if (form.classList.contains("submitted")) { progress.hidden = true; return; }
+    const steps = [...form.querySelectorAll(".reg-step")].filter((s) => !s.hidden);
+    // A section counts as "current" once its top passes just below the sticky header and bar.
+    const line = progress.getBoundingClientRect().bottom + 60;
+    let current = 0;
+    steps.forEach((s, i) => { if (s.getBoundingClientRect().top <= line) current = i; });
+    // At the very bottom of the page the last section may never reach the line.
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) current = steps.length - 1;
+
+    const legend = steps[current].querySelector("legend");
+    progressStep.textContent = `Step ${current + 1} of ${steps.length}`;
+    progressName.textContent = legend.textContent.replace(/^\s*\d+\s*/, "").trim();
+    progressFill.style.width = `${((current + 1) / steps.length) * 100}%`;
+  }
+
+  let ticking = false;
+  const queueProgress = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => { ticking = false; updateProgress(); });
+  };
+  window.addEventListener("scroll", queueProgress, { passive: true });
+  window.addEventListener("resize", queueProgress);
+  form.addEventListener("change", queueProgress);
+  dobInput.addEventListener("input", queueProgress);
+  form.addEventListener("submit", () => setTimeout(updateProgress));
+
   updateReveals();
   updateAgeHint();
+  updateProgress();
 })();

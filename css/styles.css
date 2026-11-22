@@ -371,6 +371,34 @@ address { font-style: normal; margin-bottom: 1rem; line-height: 1.7; }
 .policy-callout a:hover { color: var(--green-800); }
 .policy-callout .ext { color: var(--muted); font-size: .85rem; }
 
+/* Progress indicator: sticks just below the site header (68px + 3px border) */
+.reg-progress {
+  position: sticky; top: 71px; z-index: 20;
+  margin: 0 -16px 1.2rem; padding: .7rem 16px .8rem;
+  background: rgba(238, 246, 240, .96); backdrop-filter: blur(4px);
+  border-bottom: 1px solid #d6e5da;
+}
+.reg-progress[hidden] { display: none; }
+.reg-progress-text { font-size: .9rem; color: var(--green-800); margin-bottom: .45rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.reg-progress-text span { color: var(--muted); }
+.reg-progress-text span::before { content: "· "; }
+.reg-progress-track { height: 6px; border-radius: 999px; background: #d6e5da; overflow: hidden; }
+.reg-progress-fill { height: 100%; width: 0; border-radius: 999px; background: var(--gold-500); transition: width .3s ease; }
+@media (prefers-reduced-motion: reduce) { .reg-progress-fill { transition: none; } }
+/* Added to the page's 76px scroll-padding so a section jumped to lands just under the progress bar */
+.reg-step { scroll-margin-top: 70px; }
+
+/* Club Welfare Officer contact */
+.welfare-card {
+  background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow);
+  border-top: 4px solid var(--gold-500); padding: 1.3rem 1.8rem;
+}
+.welfare-card h2 { font-size: 1.1rem; margin-bottom: .4rem; }
+.welfare-card p { font-size: .93rem; color: var(--muted); }
+.welfare-card .welfare-contact { color: var(--ink); margin: 0; line-height: 1.7; }
+.welfare-card a { font-weight: 600; }
+@media (max-width: 640px) { .welfare-card { padding: 1.2rem 1.1rem; } }
+
 /* Optional second parent / emergency contact */
 .add-more {
   margin-top: 1.2rem; font: inherit; font-weight: 600; font-size: .92rem; cursor: pointer;
@@ -403,7 +431,7 @@ address { font-style: normal; margin-bottom: 1rem; line-height: 1.7; }
 .join-junior { margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1px solid rgba(11,77,38,.15); }
 
 @media print {
-  .site-header, .site-footer, .page-hero .lead, .reg-done .hero-actions, .reg-done .small, .reg-actions, .gdpr-note, .add-more, .remove-extra { display: none !important; }
+  .site-header, .site-footer, .page-hero .lead, .reg-done .hero-actions, .reg-done .small, .reg-actions, .gdpr-note, .add-more, .remove-extra, .reg-progress { display: none !important; }
   .page-hero { background: none; color: var(--ink); padding: 0 0 1rem; }
   .page-hero h1 { color: var(--green-800); }
   .section-tint { background: none; }

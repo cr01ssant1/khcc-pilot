@@ -58,12 +58,19 @@
         <div class="reg-done" id="reg-done" hidden tabindex="-1">
           <h2>Thank you – registration received</h2>
           <p id="reg-done-msg"></p>
+          <!-- TODO: placeholder Welfare Officer details (see also the card at the end of the form). -->
+          <p>Any questions? Contact our Club Welfare Officer, <strong>[Welfare Officer name]</strong>, at <a href="mailto:welfare@example.com">welfare@example.com</a> or <a href="tel:+447700900000">07700 900000</a>.</p>
           <p class="small">This is a pilot form: details are not yet sent to the club automatically. Please print or save a copy (choose “Save as PDF”) and email it to the junior section, or bring it to training.</p>
           <div class="hero-actions">
             <button type="button" class="btn btn-green" id="reg-print">Print / save a copy</button>
             <a href="index.html" class="btn btn-outline-green">Back to home</a>
           </div>
         </div>
+        <div class="reg-progress" id="reg-progress" aria-hidden="true">
+          <div class="reg-progress-text"><strong id="reg-progress-step">Step 1 of 6</strong> <span id="reg-progress-name"></span></div>
+          <div class="reg-progress-track"><div class="reg-progress-fill" id="reg-progress-fill"></div></div>
+        </div>
+
         <form class="reg-form" id="reg-form" novalidate>
           <p class="form-status err" id="reg-errors" role="alert" hidden></p>
 
@@ -359,6 +366,16 @@
               </label>
             </div>
           </fieldset>
+
+          <!-- TODO: placeholder Welfare Officer details. Replace the name, email and phone here AND in the thank-you message above. -->
+          <aside class="welfare-card" aria-labelledby="welfare-heading">
+            <h2 id="welfare-heading">Questions or concerns?</h2>
+            <p>Our Club Welfare Officer is here to help with any questions about this form, or any concern about a young player's safety or wellbeing.</p>
+            <p class="welfare-contact">
+              <strong>[Welfare Officer name]</strong>, Club Welfare Officer<br>
+              <a href="mailto:welfare@example.com">welfare@example.com</a> · <a href="tel:+447700900000">07700 900000</a>
+            </p>
+          </aside>
 
           <div class="reg-actions">
             <button type="submit" class="btn btn-green">Submit registration</button>

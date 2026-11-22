@@ -46,6 +46,20 @@ How these blocks behave:
 - Remove clears what was typed, so re-adding the block starts empty.
 - In a printed or saved copy, the add buttons and Remove links are hidden, and an extra contact that was filled in prints with the rest of the form.
 
+## Progress indicator
+
+A bar stays fixed just below the site header while the parent scrolls, showing where they are, for example "Step 2 of 6 · Emergency contact", with a gold fill that grows as they go.
+
+- It follows the scroll position, so it shows the section currently on screen rather than how much has been filled in.
+- The total changes to 7 when the player's own consent section appears for a 12–17-year-old.
+- It is hidden after submission and in printed or saved copies.
+
+## Club Welfare Officer contact
+
+A "Questions or concerns?" card above the Submit button gives the Club Welfare Officer's name, email and phone. The same details are repeated in the thank-you message.
+
+**These are placeholders until the club confirms the details:** `[Welfare Officer name]`, `welfare@example.com` and `07700 900000` (a number reserved for fiction, so it can't reach a real person). They appear in two places in `junior-registration.html`, each marked with a `TODO` comment: the card at the end of the form and the thank-you message near the top of the page. Replace all three details in both places, including the `mailto:` and `tel:` links.
+
 ## Choices that go beyond the template
 
 - **Three consents must be Yes to submit:** legal responsibility, accuracy of the information, and taking part. Saying No to any of them shows a short explanation. The other consents accept either answer.
@@ -57,6 +71,7 @@ How these blocks behave:
 
 - **Nothing is sent to the club.** Like the existing enquiry form, the page checks the answers and shows a confirmation, then offers **Print / save a copy** (a clean printout of the answers) for the parent to email or bring to training. Collecting the form online needs a backend or form service. Because the form holds children's medical and contact details, that service needs to store data securely and meet GDPR.
 - **The privacy statement has no link yet.** The GDPR note at the top of the form refers to the privacy statement on the club website, which should be linked once its URL is available. The club policies are linked from the "Club policies" part of section 6 ([club policies on Play-Cricket](https://keymer.play-cricket.com/doc_details?doc_id=54623)). The link opens in a new tab so the form isn't lost.
+- **The Welfare Officer details are placeholders.** See "Club Welfare Officer contact" above for where to replace them.
 - **The thank-you message names only the first parent.**
 
 ## Testing done
