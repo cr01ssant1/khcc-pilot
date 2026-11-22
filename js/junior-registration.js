@@ -183,6 +183,7 @@
   // Follows the scroll position. Counts only visible sections, so the total
   // becomes 7 when the player's own consent section appears.
   const progress = document.getElementById("reg-progress");
+  const header = document.querySelector(".site-header");
   const progressStep = document.getElementById("reg-progress-step");
   const progressName = document.getElementById("reg-progress-name");
   const progressFill = document.getElementById("reg-progress-fill");
@@ -190,8 +191,12 @@
   function updateProgress() {
     if (form.classList.contains("submitted")) { progress.hidden = true; return; }
     const steps = [...form.querySelectorAll(".reg-step")].filter((s) => !s.hidden);
-    // A section counts as "current" once its top passes just below the sticky header and bar.
-    const line = progress.getBoundingClientRect().bottom + 60;
+    // Measured from the header and the bar's own height, because the bar slides in and out.
+    const barBottom = header.getBoundingClientRect().bottom + progress.offsetHeight;
+    // A section counts as "current" once its top passes just below the header and bar.
+    const line = barBottom + 60;
+    // Show the bar only once section 1 reaches that same line (so not at the top of the page).
+    progress.classList.toggle("is-visible", steps[0].getBoundingClientRect().top <= line);
     let current = 0;
     steps.forEach((s, i) => { if (s.getBoundingClientRect().top <= line) current = i; });
     // At the very bottom of the page the last section may never reach the line.

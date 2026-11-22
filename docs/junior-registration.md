@@ -48,7 +48,7 @@ How these blocks behave:
 
 ## Progress indicator
 
-A bar stays fixed just below the site header while the parent scrolls, showing where they are, for example "Step 2 of 6 · Emergency contact", with a gold fill that grows as they go.
+A dark green bar shows where the parent is, for example "Step 2 of 6 · Emergency contact", with a gold fill that grows as they go. It isn't shown at the top of the page: it slides down from under the site header once section 1 reaches it, and slides away again if they scroll back to the top.
 
 - It follows the scroll position, so it shows the section currently on screen rather than how much has been filled in.
 - The total changes to 7 when the player's own consent section appears for a 12–17-year-old.
