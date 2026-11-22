@@ -56,7 +56,7 @@ How these blocks behave:
 ## Before using this with real families
 
 - **Nothing is sent to the club.** Like the existing enquiry form, the page checks the answers and shows a confirmation, then offers **Print / save a copy** (a clean printout of the answers) for the parent to email or bring to training. Collecting the form online needs a backend or form service. Because the form holds children's medical and contact details, that service needs to store data securely and meet GDPR.
-- **The policy and privacy wording has no links.** The form refers to the club's privacy statement and its policies on changing/showering, anti-bullying and the code of conduct, transport, helmets, and photography/video/social media. None of these are on the site yet, so they should be linked once the URLs or documents are available.
+- **The privacy statement has no link yet.** The GDPR note at the top of the form refers to the privacy statement on the club website, which should be linked once its URL is available. The club policies are linked from the "Club policies" part of section 6 ([club policies on Play-Cricket](https://keymer.play-cricket.com/doc_details?doc_id=54623)). The link opens in a new tab so the form isn't lost.
 - **The thank-you message names only the first parent.**
 
 ## Testing done
