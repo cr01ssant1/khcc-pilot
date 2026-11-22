@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Junior Player Registration – Keymer &amp; Hassocks Cricket Club</title>
+  <meta name="description" content="Register a young player (under 18) with Keymer &amp; Hassocks Cricket Club – player profile, emergency contact, medical information and parent / guardian consent.">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="images/logo_128.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Keymer &amp; Hassocks Cricket Club home">
+        <img class="crest" src="images/logo_128.png" alt="" width="56" height="56">
+        <span class="brand-text">
+          <span class="brand-name">Keymer &amp; Hassocks</span>
+          <span class="brand-sub">Cricket Club · Est. 1896</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <a href="index.html#about">About</a>
+        <a href="index.html#fixtures">Fixtures</a>
+        <a href="index.html#results">Results</a>
+        <a href="index.html#teams">Teams</a>
+        <a href="index.html#news">News</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="index.html#join" class="btn btn-gold btn-sm">Join the club</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow eyebrow-gold">Junior membership</p>
+        <h1>Young player registration</h1>
+        <p class="lead">For players under 18. To be completed by a parent or legal guardian. It takes about 10 minutes – fields marked <span class="req">*</span> are required.</p>
+      </div>
+    </section>
+
+    <section class="section section-tint reg-section">
+      <div class="container reg-container">
+
+        <aside class="gdpr-note">
+          <h2>Your data (GDPR)</h2>
+          <p>Keymer and Hassocks Cricket Club is committed to ensuring that your privacy is protected. Any information by which you or your child can be identified will only be used in accordance with the privacy statement on our website.</p>
+        </aside>
+
+        <div class="reg-done" id="reg-done" hidden tabindex="-1">
+          <h2>Thank you – registration received</h2>
+          <p id="reg-done-msg"></p>
+          <p class="small">This is a pilot form: details are not yet sent to the club automatically. Please print or save a copy (choose “Save as PDF”) and email it to the junior section, or bring it to training.</p>
+          <div class="hero-actions">
+            <button type="button" class="btn btn-green" id="reg-print">Print / save a copy</button>
+            <a href="index.html" class="btn btn-outline-green">Back to home</a>
+          </div>
+        </div>
+        <form class="reg-form" id="reg-form" novalidate>
+          <p class="form-status err" id="reg-errors" role="alert" hidden></p>
+
+          <!-- SECTION 1 -->
+          <fieldset class="reg-step">
+            <legend><span class="step-num">1</span> Young player &amp; parent / legal guardian</legend>
+            <div class="grid-2">
+              <label class="span-2">Child's full name <span class="req">*</span>
+                <input type="text" name="child_name" required autocomplete="off">
+              </label>
+              <label>Child's date of birth <span class="req">*</span>
+                <input type="date" name="child_dob" required>
+                <small class="hint" id="age-hint"></small>
+              </label>
+              <label>School year <span class="req">*</span>
+                <select name="school_year" required>
+                  <option value="">Select…</option>
+                  <option>Reception</option>
+                  <option>Year 1</option><option>Year 2</option><option>Year 3</option>
+                  <option>Year 4</option><option>Year 5</option><option>Year 6</option>
+                  <option>Year 7</option><option>Year 8</option><option>Year 9</option>
+                  <option>Year 10</option><option>Year 11</option><option>Year 12</option>
+                  <option>Year 13</option><option>Left school</option>
+                </select>
+              </label>
+              <label class="span-2">Parent or legal guardian's full name <span class="req">*</span>
+                <input type="text" name="parent_name" required autocomplete="name">
+              </label>
+              <label class="span-2">Home address <span class="req">*</span>
+                <textarea name="address" rows="3" required autocomplete="street-address"></textarea>
+              </label>
+              <label>Postcode <span class="req">*</span>
+                <input type="text" name="postcode" required autocomplete="postal-code" pattern="\s*[A-Za-z]{1,2}[0-9][A-Za-z0-9]?\s*[0-9][A-Za-z]{2}\s*" title="A UK postcode, e.g. BN6 8QH">
+              </label>
+              <label>Email address <span class="req">*</span>
+                <input type="email" name="email" required autocomplete="email">
+              </label>
+              <label>Mobile number (parent / guardian) <span class="req">*</span>
+                <input type="tel" name="mobile" required autocomplete="tel">
+              </label>
+              <label>Home telephone
+                <input type="tel" name="home_tel">
+              </label>
+              <label>Work telephone (parent / guardian)
+                <input type="tel" name="work_tel">
+              </label>
+            </div>
+
+            <button type="button" class="add-more" data-add="parent2" aria-expanded="false" aria-controls="parent2">+ Add a second parent / guardian <span>(optional)</span></button>
+            <div class="extra-block reveal" id="parent2" hidden>
+              <div class="extra-head">
+                <h3>Second parent / guardian</h3>
+                <button type="button" class="remove-extra" data-remove="parent2">Remove</button>
+              </div>
+              <div class="grid-2">
+                <label class="span-2">Full name <span class="req">*</span>
+                  <input type="text" name="parent2_name" required>
+                </label>
+                <label>Relationship to the child
+                  <input type="text" name="parent2_relationship" placeholder="e.g. mother, father, step-parent">
+                </label>
+                <label>Mobile number <span class="req">*</span>
+                  <input type="tel" name="parent2_mobile" required>
+                </label>
+                <label>Email address
+                  <input type="email" name="parent2_email">
+                </label>
+                <label>Work telephone
+                  <input type="tel" name="parent2_work_tel">
+                </label>
+                <label class="span-2">Home address and postcode, if different
+                  <textarea name="parent2_address" rows="2"></textarea>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- SECTION 2 -->
+          <fieldset class="reg-step">
+            <legend><span class="step-num">2</span> Emergency contact</legend>
+            <p class="intro">If something happens and we can't reach the parent or guardian named above, who else can we contact? Please let this person know you've given their details to KHCC.</p>
+            <div class="grid-2">
+              <label class="span-2">Name of alternative adult <span class="req">*</span>
+                <input type="text" name="emergency_name" required>
+              </label>
+              <label>Their phone number <span class="req">*</span>
+                <input type="tel" name="emergency_tel" required>
+              </label>
+              <label>Relationship to the child <span class="req">*</span>
+                <input type="text" name="emergency_relationship" required placeholder="e.g. aunt, neighbour, family friend">
+              </label>
+            </div>
+
+            <button type="button" class="add-more" data-add="emergency2" aria-expanded="false" aria-controls="emergency2">+ Add a second emergency contact <span>(optional)</span></button>
+            <div class="extra-block reveal" id="emergency2" hidden>
+              <div class="extra-head">
+                <h3>Second emergency contact</h3>
+                <button type="button" class="remove-extra" data-remove="emergency2">Remove</button>
+              </div>
+              <div class="grid-2">
+                <label class="span-2">Name <span class="req">*</span>
+                  <input type="text" name="emergency2_name" required>
+                </label>
+                <label>Their phone number <span class="req">*</span>
+                  <input type="tel" name="emergency2_tel" required>
+                </label>
+                <label>Relationship to the child <span class="req">*</span>
+                  <input type="text" name="emergency2_relationship" required placeholder="e.g. grandparent, neighbour">
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- SECTION 3 -->
+          <fieldset class="reg-step">
+            <legend><span class="step-num">3</span> Disability</legend>
+            <p class="intro">The Disability Discrimination Act 1995 defines a disabled person as anyone with "a physical or mental impairment, which has a substantial and long-term adverse effect on his or her ability to carry out normal day-to-day activities". This helps our coaches support every player.</p>
+            <fieldset class="yn">
+              <legend>Do you consider this child to have a disability? <span class="req">*</span></legend>
+              <label><input type="radio" name="disability" value="yes" required> Yes</label>
+              <label><input type="radio" name="disability" value="no"> No</label>
+            </fieldset>
+            <div class="reveal" data-show-when="disability=yes" hidden>
+              <fieldset class="checks" data-min-one>
+                <legend>Nature of disability (tick all that apply) <span class="req">*</span></legend>
+                <label><input type="checkbox" name="disability_type" value="Visual impairment"> Visual impairment</label>
+                <label><input type="checkbox" name="disability_type" value="Hearing impairment"> Hearing impairment</label>
+                <label><input type="checkbox" name="disability_type" value="Physical disability"> Physical disability</label>
+                <label><input type="checkbox" name="disability_type" value="Learning disability"> Learning disability</label>
+                <label><input type="checkbox" name="disability_type" value="Multiple disability"> Multiple disability</label>
+                <label><input type="checkbox" name="disability_type" value="Other"> Other</label>
+              </fieldset>
+              <label class="reveal" data-show-when="disability_type=Other" hidden>Please specify <span class="req">*</span>
+                <input type="text" name="disability_other" required>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- SECTION 4 -->
+          <fieldset class="reg-step">
+            <legend><span class="step-num">4</span> Cricket experience</legend>
+            <fieldset class="yn">
+              <legend>Has this child played cricket before? <span class="req">*</span></legend>
+              <label><input type="radio" name="played_before" value="yes" required> Yes</label>
+              <label><input type="radio" name="played_before" value="no"> No</label>
+            </fieldset>
+            <div class="reveal" data-show-when="played_before=yes" hidden>
+              <fieldset class="checks" data-min-one>
+                <legend>Where have they played? (tick all that apply) <span class="req">*</span></legend>
+                <label><input type="checkbox" name="played_where" value="Primary school"> Primary school</label>
+                <label><input type="checkbox" name="played_where" value="Secondary school"> Secondary school</label>
+                <label><input type="checkbox" name="played_where" value="Local authority coaching"> Local authority coaching session(s)</label>
+                <label><input type="checkbox" name="played_where" value="Club"> Club</label>
+                <label><input type="checkbox" name="played_where" value="County"> County</label>
+                <label><input type="checkbox" name="played_where" value="Other"> Other</label>
+              </fieldset>
+              <label class="reveal" data-show-when="played_where=Club" hidden>Which club?
+                <input type="text" name="played_club">
+              </label>
+              <label class="reveal" data-show-when="played_where=Other" hidden>Please specify <span class="req">*</span>
+                <input type="text" name="played_other" required>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- SECTION 5 -->
+          <fieldset class="reg-step">
+            <legend><span class="step-num">5</span> Medical information</legend>
+            <div class="grid-2">
+              <label class="span-2">Anything our coaches need to know
+                <textarea name="medical" rows="4" placeholder="e.g. allergies, medical conditions, current medication, special dietary requirements, injuries. Leave blank if none."></textarea>
+              </label>
+              <label>Doctor / surgery name <span class="req">*</span>
+                <input type="text" name="doctor" required>
+              </label>
+              <label>Doctor's telephone number <span class="req">*</span>
+                <input type="tel" name="doctor_tel" required>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- SECTION 6 -->
+          <fieldset class="reg-step">
+            <legend><span class="step-num">6</span> Parent / legal guardian consent</legend>
+            <p class="intro">Please answer <strong>Yes</strong> or <strong>No</strong> to each statement.</p>
+
+            <h3 class="sub">Legal authority to give consent</h3>
+            <fieldset class="yn" data-must-be-yes="We can only register a child with the consent of someone who has legal responsibility for them.">
+              <legend>I confirm that I have legal responsibility for <strong class="child-name-slot">the child named above</strong> and am entitled to give this consent. <span class="req">*</span></legend>
+              <label><input type="radio" name="c_legal" value="yes" required> Yes</label>
+              <label><input type="radio" name="c_legal" value="no"> No</label>
+            </fieldset>
+            <fieldset class="yn" data-must-be-yes="Please confirm the information is accurate before submitting.">
+              <legend>To the best of my knowledge, all information on this form is accurate, and I will tell the club about any changes. <span class="req">*</span></legend>
+              <label><input type="radio" name="c_accurate" value="yes" required> Yes</label>
+              <label><input type="radio" name="c_accurate" value="no"> No</label>
+            </fieldset>
+
+            <h3 class="sub">Consent to participate</h3>
+            <fieldset class="yn" data-must-be-yes="Consent to take part is needed to register.">
+              <legend>I agree to the child named above taking part in the activities of KHCC. <span class="req">*</span></legend>
+              <label><input type="radio" name="c_participate" value="yes" required> Yes</label>
+              <label><input type="radio" name="c_participate" value="no"> No</label>
+            </fieldset>
+
+            <h3 class="sub">Medical consent</h3>
+            <fieldset class="yn">
+              <legend>In an emergency, KHCC may act <em>in loco parentis</em> if emergency first aid and / or other medical treatment is needed which, in the opinion of a qualified medical practitioner, may be necessary. I understand that all reasonable steps will be taken to contact me or the alternative adult named in section 2. <span class="req">*</span></legend>
+              <label><input type="radio" name="c_medical" value="yes" required> Yes</label>
+              <label><input type="radio" name="c_medical" value="no"> No</label>
+            </fieldset>
+            <fieldset class="yn">
+              <legend>To the best of my knowledge, my child does not have any medical condition other than those I have described in section 5. <span class="req">*</span></legend>
+              <label><input type="radio" name="c_no_other_conditions" value="yes" required> Yes</label>
+              <label><input type="radio" name="c_no_other_conditions" value="no"> No</label>
+            </fieldset>
+
+            <h3 class="sub">Club policies</h3>
+            <p>I confirm I have read, or been made aware of, KHCC's policies on:</p>
+            <div class="policy-grid">
+              <fieldset class="yn yn-compact">
+                <legend>Changing / showering <span class="req">*</span></legend>
+                <label><input type="radio" name="p_changing" value="yes" required> Yes</label>
+                <label><input type="radio" name="p_changing" value="no"> No</label>
+              </fieldset>
+              <fieldset class="yn yn-compact">
+                <legend>Anti-bullying &amp; code of conduct <span class="req">*</span></legend>
+                <label><input type="radio" name="p_conduct" value="yes" required> Yes</label>
+                <label><input type="radio" name="p_conduct" value="no"> No</label>
+              </fieldset>
+              <fieldset class="yn yn-compact">
+                <legend>Transport <span class="req">*</span></legend>
+                <label><input type="radio" name="p_transport" value="yes" required> Yes</label>
+                <label><input type="radio" name="p_transport" value="no"> No</label>
+              </fieldset>
+              <fieldset class="yn yn-compact">
+                <legend>Helmets <span class="req">*</span></legend>
+                <label><input type="radio" name="p_helmets" value="yes" required> Yes</label>
+                <label><input type="radio" name="p_helmets" value="no"> No</label>
+              </fieldset>
+              <fieldset class="yn yn-compact">
+                <legend>Photography / video / social media &amp; website <span class="req">*</span></legend>
+                <label><input type="radio" name="p_photography" value="yes" required> Yes</label>
+                <label><input type="radio" name="p_photography" value="no"> No</label>
+              </fieldset>
+            </div>
+            <fieldset class="yn">
+              <legend>I understand and agree to the responsibilities my child and I have under these policies. <span class="req">*</span></legend>
+              <label><input type="radio" name="c_responsibilities" value="yes" required> Yes</label>
+              <label><input type="radio" name="c_responsibilities" value="no"> No</label>
+            </fieldset>
+
+            <h3 class="sub">Photography &amp; video</h3>
+            <fieldset class="yn">
+              <legend>I consent to KHCC photographing or videoing my child's involvement in cricket under the terms of the KHCC photography / video, social media and website policy. <span class="req">*</span></legend>
+              <label><input type="radio" name="c_photo_parent" value="yes" required> Yes</label>
+              <label><input type="radio" name="c_photo_parent" value="no"> No</label>
+              <p class="warn">Please choose <strong>No</strong> if you do not agree to this.</p>
+            </fieldset>
+
+            <h3 class="sub">Signature</h3>
+            <div class="grid-2">
+              <label>Parent / guardian signature – type your full name <span class="req">*</span>
+                <input type="text" name="parent_signature" required class="signature">
+              </label>
+              <label>Date of signing
+                <input type="date" name="parent_signed_date" required readonly>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- CHILD CONSENT (12–17) -->
+          <fieldset class="reg-step reveal" id="child-consent" hidden>
+            <legend><span class="step-num">7</span> Player's own consent (ages 12–17)</legend>
+            <p class="intro">Players aged 12 or over are asked to give their own answer about photography. Please hand the device to your child for this part.</p>
+            <fieldset class="yn">
+              <legend>I agree to KHCC photographing or videoing my involvement in cricket under the terms of the KHCC photography / video, social media and website policy. <span class="req">*</span></legend>
+              <label><input type="radio" name="c_photo_child" value="yes" required> Yes</label>
+              <label><input type="radio" name="c_photo_child" value="no"> No</label>
+              <p class="warn">Choose <strong>No</strong> if you do not agree.</p>
+            </fieldset>
+            <div class="grid-2">
+              <label>Player signature – type your full name <span class="req">*</span>
+                <input type="text" name="child_signature" required class="signature">
+              </label>
+              <label>Date of signing
+                <input type="date" name="child_signed_date" required readonly>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="reg-actions">
+            <button type="submit" class="btn btn-green">Submit registration</button>
+            <p class="small">By submitting, the typed name above stands as the parent / guardian's signature.</p>
+          </div>
+        </form>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Keymer &amp; Hassocks Cricket Club</p>
+      <p class="sponsors">With thanks to our sponsors: The Hassocks · A Twine Butchers · Finesse Heating &amp; Plumbing · George Refurbishments · Hassocks Eyecare</p>
+      <p><a href="#top">Back to top ↑</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/junior-registration.js"></script>
+</body>
+</html>

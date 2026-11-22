@@ -24,6 +24,7 @@ const parseDate = (s) => { const [y, m, d] = s.split("-").map(Number); return ne
 
 function renderFixtures(team = "all") {
   const list = document.getElementById("fixture-list");
+  if (!list) return;
   const today = new Date(); today.setHours(0, 0, 0, 0);
   const items = FIXTURES
     .filter((f) => parseDate(f.date) >= today)
@@ -52,6 +53,7 @@ function renderFixtures(team = "all") {
 
 function renderResults() {
   const list = document.getElementById("results-list");
+  if (!list) return;
   list.innerHTML = [...RESULTS]
     .sort((a, b) => b.date.localeCompare(a.date))
     .map((r) => {
@@ -91,7 +93,7 @@ nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => {
 // Join form – pilot only: validates and confirms, but does not send anywhere yet.
 const form = document.getElementById("join-form");
 const status = document.getElementById("form-status");
-form.addEventListener("submit", (e) => {
+form?.addEventListener("submit", (e) => {
   e.preventDefault();
   let valid = true;
   form.querySelectorAll("[required]").forEach((el) => {
